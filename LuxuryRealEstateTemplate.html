@@ -1,0 +1,434 @@
+<!-- LUXURY PRESENCE STYLE HERO & STATS SECTION FOR LOFTY -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  .krc-scope {
+    --gold: #c5a059;
+    --gold-hover: #b08d46;
+    --dark-bg: #0d0f12;
+    --card-bg: rgba(18, 20, 24, 0.85);
+    --text-white: #ffffff;
+    --text-muted: #a0a6b1;
+    --border-color: rgba(255, 255, 255, 0.12);
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text-white);
+    background: var(--dark-bg);
+    overflow: hidden;
+  }
+
+  .krc-scope * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* HERO SECTION */
+  .krc-hero {
+    position: relative;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 100px 6% 80px;
+    background: linear-gradient(135deg, rgba(13,15,18,0.92) 0%, rgba(13,15,18,0.65) 100%),
+                url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=2000&q=80') center/cover no-repeat;
+    gap: 50px;
+  }
+
+  .krc-hero-content {
+    max-width: 680px;
+    z-index: 2;
+  }
+
+  .krc-tagline {
+    font-size: 0.85rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 600;
+    margin-bottom: 18px;
+    display: inline-block;
+  }
+
+  .krc-headline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.8rem, 5vw, 4.8rem);
+    font-weight: 600;
+    line-height: 1.08;
+    margin-bottom: 24px;
+    text-transform: capitalize;
+  }
+
+  .krc-subtext {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--text-muted);
+    font-weight: 300;
+    margin-bottom: 36px;
+    max-width: 540px;
+  }
+
+  .krc-cta-group {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .krc-btn {
+    padding: 15px 34px;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+    display: inline-block;
+  }
+
+  .krc-btn-primary {
+    background: var(--gold);
+    color: #000000;
+    font-weight: 600;
+  }
+
+  .krc-btn-primary:hover {
+    background: var(--gold-hover);
+    transform: translateY(-2px);
+  }
+
+  .krc-btn-outline {
+    background: transparent;
+    color: var(--text-white);
+    border: 1px solid var(--border-color);
+  }
+
+  .krc-btn-outline:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+    background: rgba(197, 160, 89, 0.05);
+  }
+
+  /* FLOATING HERO LEAD FORM */
+  .krc-hero-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 38px 32px;
+    width: 100%;
+    max-width: 420px;
+    backdrop-filter: blur(12px);
+    z-index: 2;
+    border-radius: 2px;
+  }
+
+  .krc-card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+  }
+
+  .krc-card-subtitle {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+    margin-bottom: 24px;
+  }
+
+  .krc-form-group {
+    margin-bottom: 16px;
+  }
+
+  .krc-input, .krc-select {
+    width: 100%;
+    padding: 13px 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-color);
+    color: #fff;
+    font-size: 0.85rem;
+    outline: none;
+    transition: border 0.3s;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .krc-input:focus, .krc-select:focus {
+    border-color: var(--gold);
+  }
+
+  .krc-select option {
+    background: #1a1d24;
+    color: #fff;
+  }
+
+  .krc-disclaimer {
+    font-size: 0.65rem;
+    color: #727986;
+    line-height: 1.4;
+    margin-top: 14px;
+  }
+
+  /* STATS RIBBON */
+  .krc-stats-bar {
+    background: #08090a;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    padding: 50px 6%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    text-align: center;
+  }
+
+  .krc-stat-item {
+    position: relative;
+  }
+
+  .krc-stat-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 15%;
+    height: 70%;
+    width: 1px;
+    background: var(--border-color);
+  }
+
+  .krc-stat-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.4rem, 3.5vw, 3.4rem);
+    font-weight: 700;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .krc-stat-label {
+    font-size: 0.75rem;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  /* CORE SERVICES GRID */
+  .krc-services {
+    padding: 90px 6%;
+    background: var(--dark-bg);
+  }
+
+  .krc-section-header {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 60px;
+  }
+
+  .krc-section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 3.5vw, 3rem);
+    margin-bottom: 12px;
+  }
+
+  .krc-grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+
+  .krc-card {
+    background: #14171c;
+    border: 1px solid var(--border-color);
+    padding: 40px 24px;
+    text-align: center;
+    transition: all 0.35s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 280px;
+  }
+
+  .krc-card:hover {
+    border-color: var(--gold);
+    transform: translateY(-6px);
+    background: #181c22;
+  }
+
+  .krc-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    margin-bottom: 14px;
+  }
+
+  .krc-card p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 24px;
+    font-weight: 300;
+  }
+
+  .krc-card-link {
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+
+  .krc-card-link:hover {
+    text-decoration: underline;
+  }
+
+  /* RESPONSIVE DESIGN */
+  @media (max-width: 1024px) {
+    .krc-hero {
+      flex-direction: column;
+      text-align: center;
+      padding: 80px 5% 60px;
+    }
+    .krc-subtext {
+      margin: 0 auto 30px;
+    }
+    .krc-cta-group {
+      justify-content: center;
+    }
+    .krc-hero-card {
+      margin: 20px auto 0;
+    }
+    .krc-grid-4 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .krc-stats-bar {
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 40px;
+    }
+    .krc-stat-item:nth-child(2)::after {
+      display: none;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .krc-grid-4 {
+      grid-template-columns: 1fr;
+    }
+    .krc-stats-bar {
+      grid-template-columns: 1fr;
+    }
+    .krc-stat-item::after {
+      display: none !important;
+    }
+    .krc-cta-group {
+      flex-direction: column;
+    }
+    .krc-btn {
+      width: 100%;
+    }
+  }
+</style>
+
+<div class="krc-scope">
+  <!-- HERO SECTION -->
+  <section class="krc-hero">
+    <div class="krc-hero-content">
+      <span class="krc-tagline">Toronto Real Estate Brokerage</span>
+      <h1 class="krc-headline">Defining Luxury.<br>Delivering Legacy.</h1>
+      <p class="krc-subtext">Partner with an elite, record-breaking team redefining modern real estate across the Greater Toronto Area through innovation, strategy, and white-glove execution.</p>
+      <div class="krc-cta-group">
+        <a href="/search" class="krc-btn krc-btn-primary">Search Properties</a>
+        <a href="/valuation" class="krc-btn krc-btn-outline">Free Home Valuation</a>
+      </div>
+    </div>
+
+    <!-- QUICK LEAD CAPTURE -->
+    <div class="krc-hero-card">
+      <h2 class="krc-card-title">Leave a Message</h2>
+      <p class="krc-card-subtitle">CONNECT WITH AN AGENT</p>
+      <form onsubmit="event.preventDefault(); alert('Lead captured to Lofty CRM!');">
+        <div class="krc-form-group">
+          <input type="text" class="krc-input" placeholder="Your Full Name" required>
+        </div>
+        <div class="krc-form-group">
+          <input type="email" class="krc-input" placeholder="Email Address" required>
+        </div>
+        <div class="krc-form-group">
+          <input type="tel" class="krc-input" placeholder="Phone Number" required>
+        </div>
+        <div class="krc-form-group">
+          <select class="krc-select" required>
+            <option value="" disabled selected>Interested in...</option>
+            <option value="selling-buying">Selling & Buying</option>
+            <option value="buying">Buying a Home</option>
+            <option value="selling">Selling a Home</option>
+            <option value="pre-construction">Pre-Construction</option>
+            <option value="renting">Luxury Leasing</option>
+          </select>
+        </div>
+        <button type="submit" class="krc-btn krc-btn-primary" style="width: 100%;">Connect With Us</button>
+        <p class="krc-disclaimer">By submitting, you agree to receive calls, texts, and emails regarding real estate services. Msg & data rates may apply.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- STATS RIBBON -->
+  <section class="krc-stats-bar">
+    <div class="krc-stat-item">
+      <div class="krc-stat-number">$500M+</div>
+      <div class="krc-stat-label">Total Career Sales</div>
+    </div>
+    <div class="krc-stat-item">
+      <div class="krc-stat-number">Top 0.5%</div>
+      <div class="krc-stat-label">Real Estate Authority</div>
+    </div>
+    <div class="krc-stat-item">
+      <div class="krc-stat-number">750K+</div>
+      <div class="krc-stat-label">Social Media Reach</div>
+    </div>
+    <div class="krc-stat-item">
+      <div class="krc-stat-number">5-Star</div>
+      <div class="krc-stat-label">Client Satisfaction</div>
+    </div>
+  </section>
+
+  <!-- CORE PILLARS / SERVICES -->
+  <section class="krc-services">
+    <div class="krc-section-header">
+      <span class="krc-tagline">Bespoke Real Estate</span>
+      <h2 class="krc-section-title">Buy & Sell With Confidence</h2>
+    </div>
+    <div class="krc-grid-4">
+      <div class="krc-card">
+        <div>
+          <h3>Buying a Home</h3>
+          <p>Gain access to exclusive off-market listings and bespoke advisory tailored to your lifestyle goals.</p>
+        </div>
+        <a href="/buyers" class="krc-card-link">Explore Buyers Guide &rarr;</a>
+      </div>
+      <div class="krc-card">
+        <div>
+          <h3>Selling a Home</h3>
+          <p>Maximize your property's equity with high-impact digital marketing, cinematic media, and targeted distribution.</p>
+        </div>
+        <a href="/sellers" class="krc-card-link">List With Us &rarr;</a>
+      </div>
+      <div class="krc-card">
+        <div>
+          <h3>Home Valuation</h3>
+          <p>Receive an accurate, comprehensive analysis of your property’s true market value in today's shifting climate.</p>
+        </div>
+        <a href="/valuation" class="krc-card-link">Get Your Value &rarr;</a>
+      </div>
+      <div class="krc-card">
+        <div>
+          <h3>Pre-Construction</h3>
+          <p>Unlock platinum VIP incentives and priority floor-plan allocations across top developments in the GTA.</p>
+        </div>
+        <a href="/pre-construction" class="krc-card-link">View Portfolio &rarr;</a>
+      </div>
+    </div>
+  </section>
+</div>
